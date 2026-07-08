@@ -205,14 +205,15 @@ function Hero() {
       <div className="hero-top">
         <motion.div className="hero-card" initial={{ opacity: 0, scale: 0.92, y: 40 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.15 }}>
           <div className="card-glow" />
-          <div className="profile-shell">
-            <div className="profile-halo" />
-            <img className="profile-img" src="/hemil-joshi-profile.jpg" alt="CA Hemil Joshi" />
-            <div className="credential-badge">
-              <img src="/ca-logo.png" alt="CA India Logo" />
-              <span>Chartered Accountant</span>
-            </div>
-          </div>
+        <div className="profile-shell">
+          <div className="profile-halo" />
+          <img className="profile-img" src="/hemil-joshi-profile.jpg" alt="CA Hemil Joshi" />
+        </div>
+
+        <div className="hemil-credential-logo">
+          <img src="/ca-logo.png" alt="CA India Logo" />
+          <span>Chartered Accountant</span>
+        </div>
           <div className="hero-card-footer">
             <h2>{profile.name}</h2>
             <p>{profile.role}</p>
@@ -226,8 +227,11 @@ function Hero() {
             <img className="partner-profile-img" src="/harsh.jpeg" alt="Harsh Patel" />
           </div>
           <div className="partner-info">
-            <BriefcaseBusiness />
-            <span className="partner-label">{profile.partner.designation}</span>
+          <div className="partner-credential-logo">
+              <img src="/ca-logo.png" alt="CA India Logo" />
+              <span>{profile.partner.designation}</span>
+            </div>
+
             <h3>{profile.partner.name}</h3>
             <p>{profile.partner.detail}</p>
           </div>
