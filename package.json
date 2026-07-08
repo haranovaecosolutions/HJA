@@ -1,5 +1,5 @@
 {
-  "name": "hemil-joshi-bright-premium-ca-website",
+  "name": "hemil-joshi-premium-ca-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,12 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "framer-motion": "latest",
-    "lucide-react": "latest",
-    "nodemailer": "^9.0.3",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest"
-  }
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.7",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "framer-motion": "^12.23.27",
+    "lucide-react": "^0.562.0"
+  },
+  "devDependencies": {}
 }
