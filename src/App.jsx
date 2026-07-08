@@ -223,7 +223,7 @@ function Hero() {
         <motion.div className="partner-card-hero" initial={{ opacity: 0, scale: 0.92, y: 40 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.25 }}>
           <div className="partner-profile-shell">
             <div className="profile-halo" />
-            <img className="partner-profile-img" src="/hemil-joshi-profile.jpg" alt="Harsh Patel" />
+            <img className="partner-profile-img" src="/harsh.jpg" alt="Harsh Patel" />
           </div>
           <div className="partner-info">
             <BriefcaseBusiness />
