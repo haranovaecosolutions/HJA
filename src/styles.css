@@ -724,3 +724,21 @@ footer p { margin: 4px 0 0; }
   letter-spacing: 0.8px;
   font-weight: 800;
 }
+.location-link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.location-link:hover {
+  color: #0f6bff;
+  transform: translateY(-1px);
+}
+
+.location-link svg {
+  transition: all 0.3s ease;
+}
+
+.location-link:hover svg {
+  filter: drop-shadow(0 0 8px rgba(15, 107, 255, 0.45));
+}

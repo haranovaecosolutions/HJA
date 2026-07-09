@@ -25,12 +25,13 @@ import {
 const profile = {
   firm: 'Hemil Joshi & Associates',
   name: 'CA Hemil Joshi',
-  role: 'Chartered Accountant | Assurance, Tax & Business Advisory',
+  role: 'Practicing Chartered Accountant based in Navsari since 2021, providing audit, GST, Income-tax, financial reporting and regulatory advisory services to clients across diverse sectors, while also serving as Vice Chairperson of ICAI – Navsari Branch (WIRC) and actively contributing to professional development, member engagement and branch administration.',
   city: 'Navsari',
   established: '2021',
   email: 'hemiljoshiandassociates@gmail.com',
   phones: ['9033112673', '8780171198'],
   address: 'A-101, Veer Bhadra Complex, Opp. Naranlala Society, Station Road, Navsari - 396445',
+  googleMapLink: 'https://maps.app.goo.gl/ZMN11Q1o6ac67aCL6?g_st=ac',
   intro:
     'A bright, modern and premium advisory practice delivering audit, tax, GST, compliance, financial reporting and business advisory services with discipline, clarity and practical commercial understanding.',
   overview:
@@ -56,7 +57,7 @@ const coreServices = [
   {
     title: 'Income Tax',
     icon: Scale,
-    points: ['ITR Filing', 'Tax Planning', 'Litigation Support', 'Book Keeping - Foreign & Local', 'Form 145/146', 'Other Certifications']
+    points: ['ITR Filing', 'Tax Planning', 'Litigation Support', 'Book Keeping', 'Form 145/146', 'Other Certifications']
   },
   {
     title: 'GST Advisory',
@@ -217,7 +218,6 @@ function Hero() {
           <div className="hero-card-footer">
             <h2>{profile.name}</h2>
             <p>{profile.role}</p>
-            <div className="location"><MapPin size={16} /> {profile.city}, Gujarat</div>
           </div>
         </motion.div>
 
@@ -382,16 +382,23 @@ function Contact() {
         body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
+      const responseText = await response.text();
 
-      if (!response.ok) {
-        throw new Error(data.message || "Something went wrong.");
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch {
+        throw new Error("Server error. Please check Vercel Function logs.");
       }
 
-      setStatus("Thank you. Your enquiry has been sent successfully.");
+      if (!response.ok) {
+        throw new Error(data.message || "Unable to send enquiry.");
+      }
+
+      setStatus(data.message || "Thank you. Your enquiry has been sent successfully.");
       formElement.reset();
     } catch (error) {
-      setStatus(error.message || "Unable to send enquiry. Please email us directly.");
+      setStatus(error.message || "Unable to send enquiry. Please contact us directly by email.");
     }
   }
 
@@ -404,7 +411,15 @@ function Contact() {
         <div className="contact-lines">
           <a href={`tel:${profile.phones[0]}`}><Phone size={18} /> {profile.phones.join(' / ')}</a>
           <a href={`mailto:${profile.email}`}><Mail size={18} /> {profile.email}</a>
-          <span><MapPin size={18} /> {profile.address}</span>
+          <span><a
+              className="location location-link"
+              href={profile.googleMapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MapPin size={16} />
+              {profile.address}
+            </a></span>
         </div>
         <img className="masthead" src="/firm-masthead.jpg" alt="Hemil Joshi & Associates masthead" />
       </div>
