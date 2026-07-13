@@ -43,10 +43,20 @@ const profile = {
     designation: 'Managing Partner',
     detail:
       'Analytical and detail-oriented finance professional with CFA Level II, strong understanding of capital markets, financial statement analysis, portfolio management, quantitative methods and financial modelling, supported by high ethical standards.'
+  },
+  technicalExpert: {
+    name: 'Dhruv Joshi',
+    designation: 'Technical Expert – AI & Automation',
+    title: 'AI/ML Engineer | GenAI & MLOps Specialist',
+    website: 'https://dhruvjoshi.co',
+    detail:
+      'Dhruv Joshi is associated with Hemil Joshi & Associates as a technical collaborator for developing customized financial, compliance and AI-driven business tools. His technical expertise in AI/ML, Generative AI, LLM/RAG systems, automation, scalable APIs and MLOps complements the firm’s practical financial, taxation and compliance knowledge.',
+    focus:
+      'Together, the financial domain understanding of Hemil Joshi & Associates and Dhruv Joshi’s in-depth AI engineering capability enable the development of tailored tools for document processing, invoice automation, management dashboards, compliance workflows, data analytics and day-to-day operational efficiency.',
   }
 };
 
-const navItems = ['Services', 'Expertise', 'Industries', 'Engagements', 'Contact'];
+const navItems = ['Services', 'Expertise', 'Industries', 'Engagements', 'AI Automation', 'Contact'];
 
 const coreServices = [
   {
@@ -135,7 +145,8 @@ const fadeUp = {
 };
 
 function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const targetId = id.toLowerCase().replace(/\s+/g, '-');
+  document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function Header() {
@@ -155,7 +166,7 @@ function Header() {
 
       <nav className="desktop-nav" aria-label="Main navigation">
         {navItems.map((item) => (
-          <button key={item} onClick={() => scrollTo(item.toLowerCase())}>{item}</button>
+          <button key={item} onClick={() => scrollTo(item)}>{item}</button>
         ))}
       </nav>
 
@@ -170,7 +181,7 @@ function Header() {
           <div className="mobile-panel">
             <button className="close-btn" onClick={() => setOpen(false)} aria-label="Close menu"><X /></button>
             {navItems.map((item) => (
-              <button key={item} onClick={() => { setOpen(false); scrollTo(item.toLowerCase()); }}>{item}</button>
+              <button key={item} onClick={() => { setOpen(false); scrollTo(item); }}>{item}</button>
             ))}
             <a href={`tel:${profile.phones[0]}`}>Call: {profile.phones[0]}</a>
           </div>
@@ -461,6 +472,7 @@ export default function App() {
       <Services />
       <Expertise />
       <TeamAndIndustries />
+      <TechnicalExpertSection />
       <Engagements />
       <Contact />
       <Footer />
@@ -506,10 +518,98 @@ function SeoContentSection() {
   );
 }
 
-<div className="local-seo-footer">
-  <h3>Hemil Joshi & Associates</h3>
-  <p>Chartered Accountants in Navsari, Gujarat</p>
-  <p>Office Address: YOUR FULL OFFICE ADDRESS, Navsari, Gujarat, India</p>
-  <p>Phone: YOUR PHONE NUMBER</p>
-  <p>Email: hemiljoshiandassociates@gmail.com</p>
-</div>
+function TechnicalExpertSection() {
+  return (
+    <section className="technical-expert-section" id="ai-automation">
+      <div className="tech-bg-orb tech-orb-one" />
+      <div className="tech-bg-orb tech-orb-two" />
+
+      <div className="tech-section-header">
+        <div className="section-kicker">AI Automation</div>
+        <h2>Technology Collaboration</h2>
+        <p>
+          Hemil Joshi & Associates partners with technical expert Dhruv Joshi to deliver AI-driven tools and automation for audit, GST, income tax and compliance workflows.
+        </p>
+      </div>
+
+      <div className="tech-collab-card">
+        <div className="tech-left-panel">
+          <div className="tech-mini-label">Technical Expert</div>
+
+          <div className="tech-avatar-shell">
+            <div className="tech-avatar-glow" />
+            <div className="tech-avatar-text">
+              <img src="/Dhruv-website-photo.jpeg" alt="Dhruv Joshi" />
+            </div>
+          </div>
+
+          <h3>{profile.technicalExpert.name}</h3>
+          <span>{profile.technicalExpert.designation}</span>
+          <p>{profile.technicalExpert.title}</p>
+
+          <a
+            href={profile.technicalExpert.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tech-website-link"
+          >
+            Visit Technical Profile →
+          </a>
+        </div>
+
+        <div className="tech-right-panel">
+          <div className="tech-content-block">
+            <h4>Role in Digital & AI-Based Projects</h4>
+            <p>{profile.technicalExpert.detail}</p>
+          </div>
+
+          <div className="tech-content-block">
+            <h4>Combined Value Proposition</h4>
+            <p>{profile.technicalExpert.focus}</p>
+          </div>
+
+          <div className="tech-capability-grid">
+            <div>
+              <strong>Financial Tools</strong>
+              <span>Custom MIS, dashboards, reconciliations and reporting workflows.</span>
+            </div>
+
+            <div>
+              <strong>Document AI</strong>
+              <span>Invoice reading, PDF extraction, document review and data structuring.</span>
+            </div>
+
+            <div>
+              <strong>Compliance Automation</strong>
+              <span>GST, income-tax, ROC and internal compliance tracking systems.</span>
+            </div>
+
+            <div>
+              <strong>AI Assistants</strong>
+              <span>Firm-specific assistants for finance, operations and internal knowledge.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="tech-process-strip">
+        <div>
+          <span>01</span>
+          <p>Understand business process</p>
+        </div>
+        <div>
+          <span>02</span>
+          <p>Map finance and compliance pain-points</p>
+        </div>
+        <div>
+          <span>03</span>
+          <p>Design AI-enabled workflow</p>
+        </div>
+        <div>
+          <span>04</span>
+          <p>Deploy practical tool for daily use</p>
+        </div>
+      </div>
+    </section>
+  );
+}
