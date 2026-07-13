@@ -505,3 +505,11 @@ function SeoContentSection() {
     </section>
   );
 }
+
+<div className="local-seo-footer">
+  <h3>Hemil Joshi & Associates</h3>
+  <p>Chartered Accountants in Navsari, Gujarat</p>
+  <p>Office Address: YOUR FULL OFFICE ADDRESS, Navsari, Gujarat, India</p>
+  <p>Phone: YOUR PHONE NUMBER</p>
+  <p>Email: hemiljoshiandassociates@gmail.com</p>
+</div>
