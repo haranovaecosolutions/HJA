@@ -37,14 +37,18 @@ a { color: inherit; text-decoration: none; }
 
 .site-header {
   position: fixed;
-  inset: 16px clamp(16px, 4vw, 56px) auto;
+  top: 16px;
+  left: 16px;
+  right: 16px;
   z-index: 60;
-  width: min(100%, calc(100vw - 32px));
-  max-width: 1380px;
+  width: auto;
+  max-width: 1180px;
+  margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
   padding: 12px 16px;
   border: 1px solid rgba(209, 218, 229, 0.96);
   border-radius: 999px;
@@ -74,12 +78,16 @@ a { color: inherit; text-decoration: none; }
 .brand strong { font-size: 15px; letter-spacing: -0.01em; }
 .brand small { color: var(--muted); font-size: 12px; font-weight: 800; }
 .desktop-nav {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
   align-items: center;
+  overflow-x: auto;
+  padding: 0 6px;
+  max-width: calc(100vw - 320px);
 }
 .desktop-nav button {
   border: 0;
@@ -89,6 +97,7 @@ a { color: inherit; text-decoration: none; }
   padding: 10px 14px;
   border-radius: 999px;
   transition: 0.22s ease;
+  white-space: nowrap;
 }
 .desktop-nav button:hover { background: rgba(29, 78, 216, 0.09); color: var(--royal); }
 .nav-cta {
@@ -616,6 +625,19 @@ footer strong { color: #fff; }
 footer p { margin: 4px 0 0; }
 
 @media (max-width: 1180px) {
+  .site-header {
+    gap: 12px;
+    padding: 14px 14px;
+  }
+  .desktop-nav {
+    width: 100%;
+    justify-content: center;
+    gap: 6px;
+    padding: 0;
+  }
+  .nav-cta {
+    flex: 0 0 auto;
+  }
   .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero { grid-template-columns: 1fr; }
   .hero-top { grid-template-columns: 1fr; }
