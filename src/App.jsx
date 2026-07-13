@@ -467,3 +467,41 @@ export default function App() {
     </main>
   );
 }
+
+function SeoContentSection() {
+  return (
+    <section className="seo-section">
+      <div className="section-kicker">Local Chartered Accountant Firm</div>
+
+      <h2>
+        CA in Navsari, Gujarat for Audit, GST, Income Tax and Business Advisory
+      </h2>
+
+      <p>
+        Hemil Joshi & Associates is a Chartered Accountant firm based in Navsari,
+        Gujarat, serving businesses, professionals, SMEs, partnership firms,
+        companies, NGOs and service organisations with audit, taxation,
+        compliance and advisory support.
+      </p>
+
+      <p>
+        The firm provides professional services in statutory audit, internal
+        audit, GST registration and returns, GST refund, income tax return filing,
+        income tax planning, litigation support, financial statement preparation,
+        certification, ROC compliance, project finance consulting, government
+        subsidy assistance and trademark registration support.
+      </p>
+
+      <div className="seo-keyword-grid">
+        <span>CA in Navsari</span>
+        <span>Chartered Accountant in Navsari</span>
+        <span>CA in Gujarat</span>
+        <span>CA near me</span>
+        <span>GST Consultant in Navsari</span>
+        <span>Income Tax Consultant in Navsari</span>
+        <span>Audit Firm in Gujarat</span>
+        <span>Hemil Joshi & Associates</span>
+      </div>
+    </section>
+  );
+}
