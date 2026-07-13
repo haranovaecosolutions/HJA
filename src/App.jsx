@@ -141,7 +141,7 @@ function scrollTo(id) {
 function Header() {
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
-  const headerBg = useTransform(scrollY, [0, 80], ['rgba(255, 255, 255, 0.74)', 'rgba(255, 255, 255, 0.94)']);
+  const headerBg = useTransform(scrollY, [0, 80], ['rgba(255, 255, 255, 0.96)', 'rgba(255, 255, 255, 0.98)']);
 
   return (
     <motion.header className="site-header" style={{ background: headerBg }}>
