@@ -347,6 +347,52 @@ a { color: inherit; text-decoration: none; }
 .section-title p { color: var(--muted); font-size: 18px; line-height: 1.75; }
 
 .services-section { background: linear-gradient(180deg, var(--bg), #ffffff); }
+.client-showcase { margin-bottom: 72px; }
+.client-showcase .section-title { margin-bottom: 28px; }
+.client-logo-marquee {
+  overflow: hidden;
+  padding: 4px 0;
+  border-top: 1px solid rgba(29, 78, 216, 0.10);
+  border-bottom: 1px solid rgba(29, 78, 216, 0.10);
+  background: rgba(255, 255, 255, 0.72);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+.client-logo-track {
+  display: flex;
+  width: max-content;
+  animation: client-logo-scroll 38s linear infinite;
+  will-change: transform;
+}
+.client-logo-group {
+  display: flex;
+  flex: 0 0 auto;
+}
+.client-logo-item {
+  display: grid;
+  place-items: center;
+  flex: 0 0 230px;
+  height: 136px;
+  padding: 6px 12px;
+  border-right: 1px solid rgba(29, 78, 216, 0.08);
+}
+.client-logo-item img {
+  display: block;
+  width: 100%;
+  height: 124px;
+  object-fit: contain;
+}
+.client-logo-marquee:hover .client-logo-track { animation-play-state: paused; }
+@keyframes client-logo-scroll {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .client-logo-track { animation: none; }
+}
+@media (max-width: 600px) {
+  .client-logo-item { flex-basis: 190px; height: 112px; padding: 6px 14px; }
+  .client-logo-item img { height: 96px; }
+}
 .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .service-card {
   position: relative;

@@ -125,9 +125,26 @@ const industries = [
 ];
 
 const engagements = [
-  'Internal Auditor – Beacon Group of Companies and Haardik Nayak Financial Distribution Pvt. Ltd.',
+  'Internal Auditor for various private limited companies and LLP across India.',
   'Statutory Auditor for multiple SMEs and partnership firms.',
   'GST consultant and compliance partner for businesses across sectors.'
+];
+
+const clientLogos = [
+  { file: 'AMANTRA.svg', name: 'Amantra' },
+  { file: 'AMONROO.svg', name: 'Amonroo' },
+  { file: 'ASHA.svg', name: 'Asha' },
+  { file: 'BEACON.svg', name: 'Beacon' },
+  { file: 'BIOGENY.svg', name: 'Biogeny' },
+  { file: 'BRAHMSHRE.svg', name: 'Brahmshre' },
+  { file: 'FLORENCE LOGO.jpeg', name: 'Florence' },
+  { file: 'HARAVIBA.svg', name: 'Haraviba' },
+  { file: 'HARDHIK NAYAK.svg', name: 'Hardhik Nayak' },
+  { file: 'LEUCISTIC.svg', name: 'Leucistic' },
+  { file: 'MEERA.svg', name: 'Meera' },
+  { file: 'MEPANI HOLIDAY.svg', name: 'Mepani Holiday' },
+  { file: 'SRTM.svg', name: 'SRTM' },
+  { file: 'VECTOR.svg', name: 'Vector' }
 ];
 
 const why = [
@@ -263,8 +280,23 @@ function SectionTitle({ eyebrow, title, children }) {
 }
 
 function Services() {
+  const renderClientLogos = () => clientLogos.map((client) => (
+    <div className="client-logo-item" key={client.file}>
+      <img src={`/logo/${encodeURIComponent(client.file)}`} alt={client.name} />
+    </div>
+  ));
+
   return (
     <section id="services" className="section services-section">
+      <div className="client-showcase">
+        <SectionTitle eyebrow="Our Trusted Clients" title="Trusted by businesses across India." />
+        <div className="client-logo-marquee" aria-label="Client logos">
+          <div className="client-logo-track">
+            <div className="client-logo-group">{renderClientLogos()}</div>
+            <div className="client-logo-group" aria-hidden="true">{renderClientLogos()}</div>
+          </div>
+        </div>
+      </div>
       <SectionTitle eyebrow="Service Architecture" title="Integrated professional services under one advisory umbrella.">
         Designed for businesses requiring reliable compliance execution, financial reporting discipline and practical commercial advice.
       </SectionTitle>
