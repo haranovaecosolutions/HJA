@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import clientLogos from 'virtual:client-logos';
 import {
   ArrowRight,
   BadgeCheck,
@@ -128,23 +129,6 @@ const engagements = [
   'Internal Auditor for various private limited companies and LLP across India.',
   'Statutory Auditor for multiple SMEs and partnership firms.',
   'GST consultant and compliance partner for businesses across sectors.'
-];
-
-const clientLogos = [
-  { file: 'AMANTRA.svg', name: 'Amantra' },
-  { file: 'AMONROO.svg', name: 'Amonroo' },
-  { file: 'ASHA.svg', name: 'Asha' },
-  { file: 'BEACON.svg', name: 'Beacon' },
-  { file: 'BIOGENY.svg', name: 'Biogeny' },
-  { file: 'BRAHMSHRE.svg', name: 'Brahmshre' },
-  { file: 'FLORENCE LOGO.jpeg', name: 'Florence' },
-  { file: 'HARAVIBA.svg', name: 'Haraviba' },
-  { file: 'HARDHIK NAYAK.svg', name: 'Hardhik Nayak' },
-  { file: 'LEUCISTIC.svg', name: 'Leucistic' },
-  { file: 'MEERA.svg', name: 'Meera' },
-  { file: 'MEPANI HOLIDAY.svg', name: 'Mepani Holiday' },
-  { file: 'SRTM.svg', name: 'SRTM' },
-  { file: 'VECTOR.svg', name: 'Vector' }
 ];
 
 const why = [
